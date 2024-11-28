@@ -1,4 +1,6 @@
 package com.milenyumsoft.consecionario.model;
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
 import lombok.*;
 
@@ -21,6 +23,7 @@ public class Auto {
     private String anio;
 
     @OneToMany(mappedBy = "unAuto")
+    @JsonIgnore
     private List<Propietario> listaPropietarios;
 
 }

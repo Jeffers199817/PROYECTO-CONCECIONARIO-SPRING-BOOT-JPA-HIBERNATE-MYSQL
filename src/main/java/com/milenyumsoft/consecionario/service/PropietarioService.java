@@ -52,9 +52,12 @@ public class PropietarioService implements IPropietarioService {
     @Override
     public Propietario editarPropietario(Propietario propietario) {
 
-        propietarioRepository.save(propietario);
+        this.crearPropietario(propietario);
+
         Propietario propi = propietarioRepository.findById(propietario.getIdPropietario()).get();
         return propi;
+
+
 
     }
 }

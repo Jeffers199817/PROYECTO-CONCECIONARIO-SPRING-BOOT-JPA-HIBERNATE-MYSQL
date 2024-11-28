@@ -53,11 +53,11 @@ public class PropietarioController {
     }
 
     @PutMapping("propietario/editar1")
-    public void editarPropietario(@RequestBody Propietario propietario) {
+    public Propietario editarPropietario(@RequestBody Propietario propietario) {
 
-        propietarioService.editarPropietario(propietario);
+        Propietario propi= propietarioService.editarPropietario(propietario);
 
-
+        return propi;
     }
 
     @DeleteMapping("propietario/eliminar")
