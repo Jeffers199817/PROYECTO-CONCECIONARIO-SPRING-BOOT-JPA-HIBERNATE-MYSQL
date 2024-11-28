@@ -33,39 +33,38 @@ public class AutoController {
     }
 
     @PostMapping("auto/crear")
-    public String createPropietario(@RequestBody Propietario propietario) {
+    public String createAuto(@RequestBody Auto auto) {
 
-        propietarioService.crearPropietario(propietario);
-        return "Propietario creado, exitosamente";
+        autoService.crearAuto(auto);
+        return "Auto creado, exitosamente";
     }
 
-    @PutMapping("propietario/editar")
-    public Propietario editPropietario(@RequestParam Long idOriginal,
+    @PutMapping("auto/editar")
+    public Auto editAuto(@RequestParam Long idOriginal,
                                        @RequestParam(required = false , name="id") Long  idNuevo,
-                                       @RequestParam(required = false,name="nombre") String nombreNuevo,
-                                       @RequestParam(required = false, name="apellido") String apellidoNuevo,
-                                       @RequestParam(required = false, name="dni") String dniNuevo,
-                                       @RequestParam(required=false, name="idauto") Long idAuto) {
+                                       @RequestParam(required = false,name="marca") String marcaNuevo,
+                                       @RequestParam(required = false, name="modelo") String modeloNuevo,
+                                       @RequestParam(required = false, name="patente") String patenteNuevo,
+                                       @RequestParam(required=false, name="anio") String anio) {
 
-        Auto auto=autoService.traerAuto(idAuto);
 
-        propietarioService.editarPropietario(idOriginal, idNuevo, nombreNuevo, apellidoNuevo, dniNuevo,auto);
+        autoService.editarAuto(idOriginal, idNuevo,marcaNuevo,modeloNuevo,patenteNuevo,anio);
 
-        return propietarioService.traerPropietario(idNuevo);
-
-    }
-
-    @PutMapping("propietario/editar1")
-    public void editarPropietario(@RequestBody Propietario propietario) {
-
-        propietarioService.editarPropietario(propietario);
-
+        return autoService.traerAuto(idNuevo);
 
     }
 
-    @DeleteMapping("propietario/eliminar")
-    public String eliminarPropietario(@RequestParam Long idOriginal) {
-        propietarioService.elimnarPropietario(idOriginal);
+    @PutMapping("auto/editar1")
+    public void editarAuto(@RequestBody Auto auto) {
+
+        autoService.editarAuto(auto);
+
+
+    }
+
+    @DeleteMapping("auto/eliminar")
+    public String eliminarAuto(@RequestParam Long idOriginal) {
+        autoService.eliminarAuto(idOriginal);
         return "Propietario eliminado, exitosamente";
     }
 }
