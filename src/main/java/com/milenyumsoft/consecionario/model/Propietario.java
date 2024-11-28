@@ -22,4 +22,8 @@ public class Propietario {
     private String apellido;
     private String dni;
 
+    @ManyToOne
+    @JoinColumn(name="idAuto")
+    private Auto unAuto;
+
 }

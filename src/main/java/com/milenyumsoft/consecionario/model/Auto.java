@@ -2,6 +2,9 @@ package com.milenyumsoft.consecionario.model;
 import jakarta.persistence.*;
 import lombok.*;
 
+import java.util.List;
+
+
 @Getter
 @Setter
 @AllArgsConstructor
@@ -16,5 +19,8 @@ public class Auto {
     private String modelo;
     private String patente;
     private String anio;
+
+    @OneToMany(mappedBy = "unAuto")
+    private List<Propietario> listaPropietarios;
 
 }
