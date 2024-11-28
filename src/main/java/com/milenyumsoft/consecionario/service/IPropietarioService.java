@@ -1,5 +1,6 @@
 package com.milenyumsoft.consecionario.service;
 
+import com.milenyumsoft.consecionario.model.Auto;
 import com.milenyumsoft.consecionario.model.Propietario;
 
 import java.util.List;
@@ -14,7 +15,7 @@ public interface IPropietarioService {
 
     public void elimnarPropietario(Long id);
 
-    public void editarPropietario(Long idOriginal, Long idNuevo, String nombre, String apellido, String dni);
+    public void editarPropietario(Long idOriginal, Long idNuevo, String nombre, String apellido, String dni, Auto auto);
 
     public Propietario editarPropietario(Propietario propietario);
 

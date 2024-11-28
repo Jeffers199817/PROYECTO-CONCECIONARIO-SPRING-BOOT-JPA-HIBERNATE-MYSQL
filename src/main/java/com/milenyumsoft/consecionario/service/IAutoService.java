@@ -11,9 +11,11 @@ public interface IAutoService {
 
     public List<Auto> traerAutos();
 
+    public Auto traerAuto(Long id);
+
     public void eliminarAuto(Long id);
 
     public void editarAuto(Long idOriginal,Long idNuevo, String marcaNuevo, String modeloNuevo, String patenteNuevo, String anioNuevo);
 
-    public Auto editarAuto(Auto auto);
+    public void editarAuto(Auto auto);
 }
